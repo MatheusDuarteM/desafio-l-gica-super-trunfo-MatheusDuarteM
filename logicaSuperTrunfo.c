@@ -19,6 +19,7 @@ typedef struct {
 
 int main()
 {
+
     // Criar um array para guardar as informações das 2 cartas
     CartaInfo cartas[3];
     
@@ -61,34 +62,70 @@ int main()
 
     }
     
-     if(cartas[1].populacao > cartas[2].populacao){
+    
+    int escolha;
+    printf("Para comparar a população digite 1\n Para comparar a área digite 2\n" 
+    "Para comparar o PIB digite 3\n Para comparar Pontos turisticos digite 4\n"
+    "Para comparar a densidade digite 5\n Para mostrar os nomes das cidades digites 6\n");
+    scanf("%d",&escolha);
+    
+    switch(escolha){
+    
+    case 1:
+        if(cartas[1].populacao > cartas[2].populacao)
+        {
         printf("População: Carta 1 - %s venceu \n",cartas[1].nomeDaCidade);
-    }else{
+        }else
+        {
         printf("População: Carta 2 - %s venceu\n",cartas[2].nomeDaCidade);
-    }if(cartas[1].area > cartas[2].area){
+        }
+    break;
+    case 2:
+        if(cartas[1].area > cartas[2].area)
+        {
         printf("Área: Carta 1 - %s venceu \n",cartas[1].nomeDaCidade);
-    }else{
+        }
+        else
+        {
         printf("Área: Carta 2 - %s venceu \n",cartas[2].nomeDaCidade);
-    }if (cartas[1].pib < cartas[2].pib){
+        }
+    break;
+    case 3:
+        if (cartas[1].pib < cartas[2].pib)
+        {
         printf("PIB: Carta 2 - %s venceu \n",cartas[2].nomeDaCidade);
-    }else{
+        }
+        else
+        {
         printf("PIB: Carta 1 - %s venceu \n",cartas[1].nomeDaCidade);
-    }if(cartas[1].pontosTuristicos < cartas[2].pontosTuristicos){
+        }
+    break;
+    case 4:
+        if(cartas[1].pontosTuristicos < cartas[2].pontosTuristicos)
+        {
         printf("Pontos Turísticos: Carta 2 - %s venceu \n",cartas[2].nomeDaCidade);
-    }else{
+        }
+        else
+        {
         printf("Pontos Turísticos: Carta 1 - %s venceu \n",cartas[1].nomeDaCidade);
-    }if(cartas[1].densidade > cartas[2].densidade){
+        }
+    break;
+    case 5:
+        if(cartas[1].densidade > cartas[2].densidade)
+        {
         printf("Densidade Populacional: Carta 1 - %s venceu \n",cartas[1].nomeDaCidade);
-    }else{
+        }
+        else
+        {
         printf("Densidade Populacional: Carta 2 - %s venceu \n",cartas[2].nomeDaCidade);
-    }if (cartas[1].pibPessoa < cartas[2].pibPessoa){
-        printf("PIB per Capita: Carta 2 - %s venceu \n",cartas[2].nomeDaCidade);
-    }else{
-        printf("PIB per Capita: Carta 1 - %s venceu \n",cartas[1].nomeDaCidade);
-    }if(cartas[1].superPoder > cartas[2].superPoder){
-        printf("Super Poder: Carta 1 - %s venceu \n",cartas[1].nomeDaCidade);
-    }else{
-        printf("Super Poder: Carta 2 - %s venceu \n",cartas[2].nomeDaCidade);
+        }
+    break;
+    case 6:
+        printf("O nome da cidade 1 é %s e o nome da cidade 2 é %s", cartas[1].nomeDaCidade,cartas[2].nomeDaCidade);
+    break;
+    default:
+    printf("Escolha invalida!");
+    break;
     }
     return 0;
 }
